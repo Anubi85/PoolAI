@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69B9FA21-AE4E-4A06-864D-B08BE84D6D8D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PoolAI.SDK</RootNamespace>
+    <AssemblyName>PoolAI.SDK</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Balls\Ball.cs" />
+    <Compile Include="Balls\BallSetBase.cs" />
+    <Compile Include="Balls\BallSetFactory.cs" />
+    <Compile Include="Balls\BallSetType.cs" />
+    <Compile Include="Balls\IBall.cs" />
+    <Compile Include="Balls\IBallInternal.cs" />
+    <Compile Include="Balls\IBallSet.cs" />
+    <Compile Include="Balls\IBallSetInternal.cs" />
+    <Compile Include="Balls\TriangleBallSet.cs" />
+    <Compile Include="Brain\ExportBrainAttribute.cs" />
+    <Compile Include="Brain\ExportDrawOverlayFunctionAttribute.cs" />
+    <Compile Include="Brain\ExportEvolveFunctionAttribute.cs" />
+    <Compile Include="Brain\ExportMaxShotFunctionAttribute.cs" />
+    <Compile Include="Brain\IBrainMetadata.cs" />
+    <Compile Include="Data\BallGraphicsData.cs" />
+    <Compile Include="Data\BallPhysicsData.cs" />
+    <Compile Include="Data\BallStepInfo.cs" />
+    <Compile Include="Data\IStepInfoCacheRecord.cs" />
+    <Compile Include="Data\Players.cs" />
+    <Compile Include="Data\ShotData.cs" />
+    <Compile Include="Data\StepInfoCache.cs" />
+    <Compile Include="Data\StepInfoBase.cs" />
+    <Compile Include="Data\BankStepInfo.cs" />
+    <Compile Include="DoubleExtension.cs" />
+    <Compile Include="Game\ExportGameAttribute.cs" />
+    <Compile Include="Brain\IBrain.cs" />
+    <Compile Include="ComponentManager.cs" />
+    <Compile Include="Game\GameManager.cs" />
+    <Compile Include="Game\IGameMetadata.cs" />
+    <Compile Include="Geometry\GeometryUtils.cs" />
+    <Compile Include="Geometry\ICoordinates.cs" />
+    <Compile Include="Geometry\Line2.cs" />
+    <Compile Include="Geometry\PointsAtDistanceSolution.cs" />
+    <Compile Include="Geometry\SolutionType.cs" />
+    <Compile Include="Geometry\Coordinates.cs" />
+    <Compile Include="Game\IGame.cs" />
+    <Compile Include="IBaseMetadata.cs" />
+    <Compile Include="LinearAlgebra\LinearSystem.cs" />
+    <Compile Include="LinearAlgebra\Matrix.cs" />
+    <Compile Include="LinearAlgebra\Vector.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tables\ITable.cs" />
+    <Compile Include="Tables\ITableInternal.cs" />
+    <Compile Include="Tables\LargePocketsTable.cs" />
+    <Compile Include="Tables\SmallPocketsTable.cs" />
+    <Compile Include="Tables\TableWithPocketsBase.cs" />
+    <Compile Include="Tables\TableFactory.cs" />
+    <Compile Include="Tables\TableType.cs" />
+    <Compile Include="Utility.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
